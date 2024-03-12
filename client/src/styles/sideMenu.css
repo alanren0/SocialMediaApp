@@ -1,0 +1,63 @@
+
+.side-menu-container {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    background-color: white;
+    top: 90px;
+    margin: 0 20px 0 20px;
+    max-height: 80%;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.side-menu-btn {
+    height: 40px;
+    background-color: white;
+    border: 0;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 5px 0 5px 0;
+}
+
+.side-menu-btn:hover {
+    background-color: #5386E4;
+    color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    transition: all 0.1s;
+}
+
+.side-menu-separator {
+    border-bottom: 2px solid rgb(173, 195, 255);
+    text-align: center;
+    margin: 10px 0 10px 0;
+    color: #5386E4;
+    font-size: 20px;
+}
+
+.following-container {
+    height: 50%;
+    overflow-y: scroll;   
+}
+
+.side-user-info-container {
+    display: flex;
+    justify-content: left;
+    margin: 5px 2px 5px 2px;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.side-user-info-container:hover {
+    background-color: #5386E4;
+    color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    transition: all 0.1s;
+}
+
+.side-user-name-container {
+    padding-left: 10px;
+    display: flex;
+    width: 100%;
+}

@@ -16,15 +16,5 @@ app.register_blueprint(auth, url_prefix='/auth')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 app.config['SECRET_KEY'] = SECRET_KEY
 
-@app.route("/")
-def index():
-    return "Hello World"
-
-@app.route('/test')
-@token_required
-def auth():
-    return 'authed'
-
-
 app.run(host="0.0.0.0", port=3001, debug=True)
 

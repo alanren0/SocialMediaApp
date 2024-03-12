@@ -1,0 +1,27 @@
+.filters-container {
+    display: flex;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 20px;
+    margin: 0 0 20px 0;
+}
+
+.filter-option {
+    flex: 1;
+    border: 0;
+    background-color: #5386E4;
+    color: white;
+    border-radius: 10px;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    padding: 0 5px 0 5px;
+    margin: 0 1px 0 1px;
+}
+
+.filter-option:hover {
+    background-color: #4173d1;
+    transition: all 0.1s;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

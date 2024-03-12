@@ -1,0 +1,27 @@
+@keyframes fall-in-out {
+    0% { 
+        opacity: 0%; 
+        transform: translate(-50%, -50px)
+    }
+    10%, 90% {
+        opacity: 100%; 
+        transform: translate(-50%, 0px)
+    }
+    100% { 
+        opacity: 0%; 
+        transform: translate(-50%, 50px)
+
+    }
+}
+
+.toast {
+    animation: fall-in-out 3s both;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 100px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;    padding: 10px;
+    border-radius: 10px;
+    width: 70%;
+}

@@ -1,0 +1,71 @@
+.posts-container {
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 20px;
+    z-index: 2;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.post {
+    margin: 20px 0 20px 0;
+    border-radius: 20px;
+    z-index: 3;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: white;
+    width: 100%;
+}
+
+.post p {
+    overflow-wrap: break-word;
+}
+
+.post:hover {
+    background-color: rgb(252, 252, 252);
+}
+
+.post-body {
+    border-top: 2px solid rgb(173, 195, 255);
+    border-bottom: 2px solid rgb(173, 195, 255);
+}
+
+.post-stats {
+    display: flex;
+    text-align: center;
+    
+}
+
+.post-stats div {
+    flex: 1;
+}
+
+.post-image-container {
+    padding: 10px 0 10px 0;
+    border-bottom: 2px solid rgb(173, 195, 255);
+    display: flex;
+    justify-content: center;
+}
+
+.post-image {
+    max-height: 80%;
+    max-width: 80%;
+    object-fit: contain;
+}
+
+.post-stats-container {
+    padding: 10px;
+    margin: 0 10px 0 10px;
+}
+
+.create-post-container {
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 20px;
+    margin: 20px 50px 0 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 50vh;
+    flex: 1;
+}

@@ -1,0 +1,30 @@
+.child-comment-container {
+    margin-left: 40px;
+}
+
+.comments-container {
+    margin: 20px 0 20px 0;
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 20px;
+    z-index: 2;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.comment-container {
+    margin: 20px 0 20px 0;
+    padding: 10px 20px 10px 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.comment-body {
+    border-bottom: 2px solid rgb(173, 195, 255);
+    border-top: 2px solid rgb(173, 195, 255);
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+

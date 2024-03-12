@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+
+body {
+    background-color: #fcfcfc;
+    color: black;
+    margin: 0;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+    display: flex;    
+    justify-content: center;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-side {
+    flex: 2;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    max-width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main-body {
+    margin-top: 90px;
+    flex: 6;
+    justify-content: center;
+    min-width: 0;
 }
 
-.App-link {
-  color: #61dafb;
+
+.btn {
+    border: 0;
+    background-color: #5386E4;
+    color: white;
+    border-radius: 100px;
+    padding: 0 20px 0 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:hover {
+    background-color: #235bc2;
+}
+
+.light-text {
+    font-size: 18px;
+    margin: 0;
+    color: rgb(71, 71, 71);
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    max-width:100%;
+}
+
+.txt-input {
+    border: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    resize: none;
+    overflow: scroll;
+}
+
+.blue-btn {
+    height: 40px;
+    background-color: #5386E4;
+    color: white;
+    border: 0;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 5px 0 5px 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.blue-btn:hover {
+    background-color: #4173d1;
+    transition: all 0.1s;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

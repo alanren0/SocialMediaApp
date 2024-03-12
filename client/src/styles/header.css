@@ -1,0 +1,47 @@
+.header-container {
+    background-color: #ffffff;
+    display: flex;
+    height: 70px;
+    width: 100vw;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.header-spacer {
+    flex: 5;
+}
+
+.home-btn {
+    height: 100%;
+    border: 0;
+    background-color: white;
+    font-size: 24px;
+    flex: 2;
+    margin: 0;
+    padding: 0;
+}
+
+.home-btn:hover {
+    color: #5386E4;
+    transition: all 0.1s;
+}
+
+.header-btn {
+    height: 100%;
+    flex: 1;
+    background-color: white;
+    border: 0;
+    font-size: 18px;
+}
+
+.header-btn:hover {
+    color: #5386E4;
+    transition: all 0.1s;
+}
+
+.header-btn-container {
+    display: flex;
+    height: 100%;
+}

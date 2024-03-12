@@ -3,6 +3,7 @@ import jwt
 from flask import request, jsonify
 from flask import current_app
 import logging
+from datetime import datetime
 
 logger = logging.getLogger(__name__)
 FORMAT = "[%(filename)s:%(lineno)s - %(funcName)20s() ] %(message)s"
@@ -13,23 +14,29 @@ logger.setLevel(logging.DEBUG)
 def token_required(func):
     @wraps(func)
     def decorated(*args, **kwargs):
-        print('authenticating')
         token = None
 
         # get token
         if "Authorization" in request.headers:
+            if len(request.headers["Authorization"].split(" ")) < 2:
+                return jsonify({'Message': 'Token is missing!'}), 400
+
             token = request.headers["Authorization"].split(" ")[1]
 
         # no token
         if not token:
-            return jsonify({'Message': 'Token is missing!'})
+            return jsonify({'Message': 'Token is missing!'}), 400
         
         # decode
         try:
             data = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=["HS256"])
-            print(data['username'])
-        except:
-            return jsonify({'Message': 'Invalid Token!'})
+
+            if datetime.strptime(data['expiration'], '%Y-%m-%d %H:%M:%S.%f') < datetime.utcnow():
+                return jsonify({'Message': 'Token Expired!'}), 400
+
+        except Exception as err:
+            logger.debug(err)
+            return jsonify({'Message': 'Invalid Token!'}), 400
 
         return func(username=data['username'], *args, **kwargs)
 
@@ -38,33 +45,46 @@ def token_required(func):
 
 def user_to_json(user):
 
-    username, following, followers, profile_pic, date_joined, bio = user
+    username, following, profile_pic, date_joined, bio, alias, followers = user
+
+    str_image = None
+    if profile_pic:
+        str_image = profile_pic.decode('utf-8')
 
     user_json = {
         'username': username,
         'following': following,
         'followers': followers,
-        'profile_pic': profile_pic,
+        'profile_pic': str_image,
         'date_joined': date_joined,
         'bio': bio,
+        'alias': alias,
     }
 
     return user_json
 
 def post_to_json(post):
 
-    id, username, body, images, liked_by, date_posted, views, last_modified, likes = post
+    id, username, body, images, liked_by, date_posted, views, last_modified, likes, share_id = post
+
+    str_images = []
+    if not images:
+        images = []
+        
+    for image in images:
+        str_images.append(image.decode('utf-8'))
 
     post_json = {
         'id': id,
         'username': username,
         'body': body,
-        'images': images,
+        'images': str_images,
         'liked_by': liked_by,
         'likes': likes,
         'views': views,
         'date_posted': date_posted,
         'last_modified': last_modified,
+        'share_id': share_id
         
     }
 
