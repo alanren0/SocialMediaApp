@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import defaultProfilePic from '../assets/defaultProfilePic.png'
 import BtnFollow from "./BtnFollow";
 import { recoilJwt, recoilToasts, recoilUser } from "../state";
@@ -8,6 +8,7 @@ import { useRecoilState } from "recoil";
 
 function UserInfoContainer() {
 
+    const navigate = useNavigate();
     const {username} = useParams();
 
     const [jwt, setJwt] = useRecoilState(recoilJwt);
@@ -84,7 +85,7 @@ function UserInfoContainer() {
 
     useEffect(() => {
         getUser();
-    }, [username]);
+    }, [username, navigate]);
 
 
     if (!user) {

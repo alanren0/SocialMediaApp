@@ -85,6 +85,10 @@ function PostsContainer({userFilter, likedBy, userFeed}) {
         setDateLimit('all');
     }, [navigate]);
 
+    if (posts?.length === 0) {
+        return <div>No posts</div>
+    }
+
     return (
         <div className='posts-container'>
             {posts?.map((post, index) => (

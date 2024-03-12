@@ -97,14 +97,23 @@ function CreatePost() {
         });
 
         if (!res.ok) {
-            setToasts([...toasts, {text: 'Failed to create post. Please try again', color: 'rgb(212, 60, 60)'}])
+            if (postId) {
+                setToasts([...toasts, {text: 'Failed to edit post. Please try again', color: 'rgb(212, 60, 60)'}])
+            } else {
+                setToasts([...toasts, {text: 'Failed to create post. Please try again', color: 'rgb(212, 60, 60)'}])
+            }
             return
         }
 
         const data = await res.json()
 
         setResetPosts(!resetPosts);
-        setToasts([...toasts, {text: 'Created new post!', color: 'rgb(70, 192, 101)'}])
+        if (postId) {
+            setToasts([...toasts, {text: 'Successfully edited your post!', color: 'rgb(70, 192, 101)'}])
+        } else {
+            setToasts([...toasts, {text: 'Created new post!', color: 'rgb(70, 192, 101)'}])
+        }
+        
         navigate(`/post/${data.post.id}`)
         
     }
