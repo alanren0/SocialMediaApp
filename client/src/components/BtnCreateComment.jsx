@@ -40,7 +40,6 @@ function BtnCreateComment({ postId, parentId, children, setChildren, setShowRepl
         }
 
         const data = await res.json();
-        console.log(data);
         const newComment = {
             comment: data.comment,
             user: user
@@ -54,11 +53,8 @@ function BtnCreateComment({ postId, parentId, children, setChildren, setShowRepl
             
             setChildren([newComment, ...children])
             setShowReplies(true);
-            console.log([newComment, ...children]);
             return;
         }
-
-        console.log('iweiweo');
 
         setComments([newComment, ...comments]);
     }

@@ -10,11 +10,6 @@ export const recoilJwt = atom({
     default: ''
 });
 
-export const recoilPosts = atom({
-    key: 'posts',
-    default: []
-});
-
 export const recoilOffset = atom({
     key: 'offset',
     default: 0

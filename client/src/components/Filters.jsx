@@ -4,7 +4,6 @@ import { reverseState, sortByState, dateLimitState } from '../state';
 
 
 function Filters({ }) {
-    // const [posts, setPosts] = useRecoilState(recoilPosts);
     const [reverse, setReverse] = useRecoilState(reverseState);
     const [sortBy, setSortBy] = useRecoilState(sortByState);
     const [dateLimit, setDateLimit] = useRecoilState(dateLimitState);

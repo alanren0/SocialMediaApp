@@ -1,14 +1,13 @@
-import Filters from "./Filters"
 import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useRecoilState } from 'recoil';
-import { recoilPosts, recoilJwt, feedOptionsState, recoilResetPosts, recoilUser } from '../state';
+import { recoilJwt, feedOptionsState, recoilResetPosts, recoilUser } from '../state';
 import { reverseState, sortByState, dateLimitState } from '../state';
 import Post from "./Post";
 
 function PostsContainer({userFilter, likedBy, userFeed}) {
 
-    const [posts, setPosts] = useRecoilState(recoilPosts);
+    const [posts, setPosts] = useState([])
     const [reverse, setReverse] = useRecoilState(reverseState);
     const [sortBy, setSortBy] = useRecoilState(sortByState);
     const [dateLimit, setDateLimit] = useRecoilState(dateLimitState);

@@ -1,9 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import { feedOptionsState, recoilJwt, recoilPosts, recoilToasts, recoilUser } from '../state'
+import { feedOptionsState, recoilJwt, recoilToasts, recoilUser } from '../state'
 import defaultProfilePic from '../assets/defaultProfilePic.png'
-import UserOptions from "./UserOptions";
-import { useState } from "react";
 
 function Header() {
     const navigate = useNavigate();
@@ -11,13 +9,11 @@ function Header() {
     const [jwt, setJwt] = useRecoilState(recoilJwt);
     const [feedOptions, setFeedOptions] = useRecoilState(feedOptionsState);
     const [toasts, setToasts] = useRecoilState(recoilToasts);
-    const [posts, setPosts] = useRecoilState(recoilPosts);
 
 
     const signout = async () => {
         setJwt('');
         setUser(null);
-        setPosts([])
         navigate('/');
         setFeedOptions({
             home: true,

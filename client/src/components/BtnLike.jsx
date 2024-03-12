@@ -1,6 +1,6 @@
 
 import { useRecoilState } from 'recoil';
-import { recoilJwt, recoilUser, recoilPosts, recoilShowSigninPopup } from '../state';
+import { recoilJwt, recoilUser, recoilShowSigninPopup } from '../state';
 import { useEffect, useState } from 'react';
 
 function BtnLike({post, setPost}) {
@@ -8,7 +8,6 @@ function BtnLike({post, setPost}) {
     const [jwt, setJwt] = useRecoilState(recoilJwt);
     const [user, setUser] = useRecoilState(recoilUser);
     const [liked, setLiked] = useState(false);
-    const [posts, setPosts] = useRecoilState(recoilPosts);
     const [showSigninPopup, setShowSigninPopup] = useRecoilState(recoilShowSigninPopup);
 
 
